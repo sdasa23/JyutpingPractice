@@ -1,0 +1,218 @@
+.cantonese-practice {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.progress, .score {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+.character-container {
+  margin: 30px 0;
+}
+
+.character {
+  font-size: 72px;
+  margin: 20px 0;
+}
+
+.hint {
+  font-size: 24px;
+  color: #999;
+  transition: color 0.3s;
+}
+
+.hint.correct {
+  color: #000;
+}
+
+.hint.incorrect {
+  color: #f00;
+}
+
+.input-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.input-container input {
+  padding: 10px;
+  font-size: 18px;
+  margin-right: 10px;
+  width: 200px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+.input-container input.incorrect-input {
+  border-color: #f00;
+}
+
+.input-container button, .controls button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input-container button:hover, .controls button:hover {
+  background-color: #45a049;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.controls button {
+  margin: 0 10px;
+  background-color: #2196F3;
+}
+
+.controls button:hover {
+  background-color: #0b7dda;
+}
+
+.hint .typed-part {
+  color: black;
+  font-weight: bold;
+}
+
+.hint .untyped-part {
+  color: gray;
+}
+
+.hint .error-part {
+  color: red;
+}
+
+.hint.correct {
+  color: green;
+  font-weight: bold;
+}
+
+.correct {
+  color: green;
+}
+
+
+.instructions {
+  margin-top: 20px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* Typing.css */
+.word-info {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.word {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.translation {
+  color: #666;
+  font-style: italic;
+}
+
+.example {
+  margin-top: 10px;
+  color: #888;
+}
+
+.underlines {
+  font-family: monospace;
+  letter-spacing: 0.5em;
+  margin-bottom: 10px;
+}
+
+.underline-char {
+  position: relative;
+  margin-right: -0.5em; /* 抵消letter-spacing的影响 */
+}
+
+.underline-char::after {
+  content: "_";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+
+.hint {
+  font-family: monospace;
+  margin-bottom: 10px;
+}
+
+.typed-part {
+  color: #4CAF50;
+}
+
+.untyped-part {
+  color: #999;
+}
+
+.error-part {
+  color: #F44336;
+}
+
+.letter-slots {
+  display: flex;
+  gap: 0.3rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.letter-slot {
+  position: relative;
+  min-width: 1.2rem;
+  text-align: center;
+}
+
+.letter-slot.space {
+  min-width: 0.8rem;
+}
+
+.space-char {
+  color: #aaa;
+  font-size: 0.8em;
+}
+
+.typed-letter {
+  position: absolute;
+  top: -1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #4CAF50;
+}
+
+.underline {
+  color: #999;
+}
+
+.letter-slot.error .underline {
+  color: #F44336;
+}
+
+.hint {
+  font-family: monospace;
+  margin: 1rem 0;
+}
+
+.typed-part {
+  color: #4CAF50;
+}
+
+.untyped-part {
+  color: #999;
+}

@@ -1,0 +1,402 @@
+[
+    {
+        "word": "貼士",
+        "translation": "tips",
+        "example_sentence": "生活小貼士"
+    },
+    {
+        "word": "著衫",
+        "translation": "穿衣服",
+        "example_sentence": "睇音樂會時一定要著正式嘅衫"
+    },
+    {
+        "word": "淨色",
+        "translation": "素色",
+        "example_sentence": "識著梗係著淨色TEE"
+    },
+    {
+        "word": "差人",
+        "translation": "警察",
+        "example_sentence": "我常喺行街時睇到差人"
+    },
+    {
+        "word": "得番",
+        "translation": "剩下",
+        "example_sentence": "大家都去做嘢 得番我喺呢度"
+    },
+    {
+        "word": "特登",
+        "translation": "特別",
+        "example_sentence": "佢琴日特燈嚟我屋企揾我"
+    },
+    {
+        "word": "叻唔切",
+        "translation": "自以為",
+        "example_sentence": "佢每次都話自己幾有米 真係叻唔切"
+    },
+    {
+        "word": "先至",
+        "translation": "才會",
+        "example_sentence": "我要去銀行先會返公司"
+    },
+    {
+        "word": "即刻",
+        "translation": "馬上",
+        "example_sentence": "而家即刻打俾佢"
+    },
+    {
+        "word": "著數",
+        "translation": "好處",
+        "example_sentence": "大家都有著數"
+    },
+    {
+        "word": "應承",
+        "translation": "答應",
+        "example_sentence": "我唔想應承咗又做唔到"
+    },
+    {
+        "word": "出糧",
+        "translation": "發薪水",
+        "example_sentence": "我公司每個月五號 準時出糧"
+    },
+    {
+        "word": "寫字樓",
+        "translation": "辦公大樓",
+        "example_sentence": "辦公大樓喺寫字樓嗰度嘅商場生意都冇咁好"
+    },
+    {
+        "word": "有路",
+        "translation": "",
+        "example_sentence": "我懷疑佢老公同其他人有路"
+    },
+    {
+        "word": "陰功",
+        "translation": "",
+        "example_sentence": "佢成日忙做嘢，返屋企仲要做家務，好陰功。"
+    },
+    {
+        "word": "利是",
+        "translation": "紅包",
+        "example_sentence": "細路仔過年收到利是都好開心"
+    },
+    {
+        "word": "俾心機",
+        "translation": "用心",
+        "example_sentence": "淨係要俾心機去做，你一定會做得好好。"
+    },
+    {
+        "word": "肉酸",
+        "translation": "醜, 不好看",
+        "example_sentence": "同學都話我生得好肉酸"
+    },
+    {
+        "word": "上車",
+        "translation": "第一次買房子",
+        "example_sentence": "我同自己講30歲之前一定要上到車。"
+    },
+    {
+        "word": "唔通",
+        "translation": "難道",
+        "example_sentence": "唔通忙碌就係我哋唯一嘅生活模式咩"
+    },
+    {
+        "word": "收線",
+        "translation": "掛電話",
+        "example_sentence": "冇嘢我收線先啦"
+    },
+    {
+        "word": "大家噉話",
+        "translation": "彼此彼此",
+        "example_sentence": "點解妳要呃我？"
+    },
+    {
+        "word": "炒車",
+        "translation": "撞車",
+        "example_sentence": "我琴日踩單車諗唔到竟然炒車"
+    },
+    {
+        "word": "爆晒燈",
+        "translation": "超可愛, 可愛到爆",
+        "example_sentence": "日本嘅嘢好多都得意到爆晒燈"
+    },
+    {
+        "word": "不溜",
+        "translation": "平常",
+        "example_sentence": "你不溜都係咁㗎啦"
+    },
+    {
+        "word": "冇啦啦",
+        "translation": "無緣無故",
+        "example_sentence": "佢點解會冇啦啦同你講嗰啲嘢？"
+    },
+    {
+        "word": "核突",
+        "translation": "噁心",
+        "example_sentence": "等陣！你睇食物裡邊有曱甴好核突唔好再食啦"
+    },
+    {
+        "word": "大鑊",
+        "translation": "完蛋",
+        "example_sentence": "今次大鑊啦 唔記得攞行李"
+    },
+    {
+        "word": "是旦",
+        "translation": "隨便",
+        "example_sentence": "做嘢唔好是是旦旦"
+    },
+    {
+        "word": "孤寒",
+        "translation": "吝嗇",
+        "example_sentence": "我覺得佢好孤寒 連10蚊都唔俾"
+    },
+    {
+        "word": "巴閉",
+        "translation": "厲害（貶意）",
+        "example_sentence": "講成咁 到底有幾巴閉啊"
+    },
+    {
+        "word": "吹水",
+        "translation": "聊天/打屁",
+        "example_sentence": "夠鐘啦，唔返工 仲喺度吹水！"
+    },
+    {
+        "word": "煲劇",
+        "translation": "看劇",
+        "example_sentence": "琴晚煲劇到太夜而家好想瞓"
+    },
+    {
+        "word": "蠱惑",
+        "translation": "有問題/有陷阱",
+        "example_sentence": "佢突然對你咁好，一定有蠱惑"
+    },
+    {
+        "word": "食檸檬",
+        "translation": "拒絕我，發我好人卡",
+        "example_sentence": "上次佢請我食檸檬，今次我要你食番俾我"
+    },
+    {
+        "word": "爆煲",
+        "translation": "被發現",
+        "example_sentence": "我都冇同其他人講過點會爆煲！一定有人出賣咗我。"
+    },
+    {
+        "word": "狼死",
+        "translation": "貪心",
+        "example_sentence": "上次炒車嗰人真係狼死，電單車輪就要我賠佢200萬"
+    },
+    {
+        "word": "轉頭",
+        "translation": "等一下",
+        "example_sentence": "你去先我轉頭再揾你"
+    },
+    {
+        "word": "蕩失路",
+        "translation": "迷路",
+        "example_sentence": "我喺個樹林盪失路"
+    },
+    {
+        "word": "頂唔順",
+        "translation": "受不了",
+        "example_sentence": "我都頂唔順佢好耐"
+    },
+    {
+        "word": "收聲",
+        "translation": "閉嘴",
+        "example_sentence": "收聲！點可以咁樣同老師講話"
+    },
+    {
+        "word": "被人飛",
+        "translation": "被人甩",
+        "example_sentence": "點解會冇啦啦被人飛"
+    },
+    {
+        "word": "放低",
+        "translation": "放下",
+        "example_sentence": "有啲嘢佢好耐都放唔低"
+    },
+    {
+        "word": "執笠",
+        "translation": "倒閉",
+        "example_sentence": "依間舖頭我好鐘意，點知會執笠"
+    },
+    {
+        "word": "怕醜",
+        "translation": "害羞",
+        "example_sentence": "大家認識下啫，唔洗怕醜"
+    },
+    {
+        "word": "濕碎",
+        "translation": "瑣碎",
+        "example_sentence": "嗰啲濕碎嘢之後先算啦！"
+    },
+    {
+        "word": "㩒錢",
+        "translation": "領錢",
+        "example_sentence": "我去ATM㩒下錢先"
+    },
+    {
+        "word": "幫襯",
+        "translation": "光顧",
+        "example_sentence": "依間鋪頭我好耐都冇嚟幫襯"
+    },
+    {
+        "word": "心水",
+        "translation": "心意",
+        "example_sentence": "希望大家都可以揾到啱心水嘅產品"
+    },
+    {
+        "word": "得意",
+        "translation": "可愛",
+        "example_sentence": "依個手袋幾得意"
+    },
+    {
+        "word": "過咗身",
+        "translation": "死掉/過世",
+        "example_sentence": "佢屋企人過咗身之後就冇人睇過佢笑"
+    },
+    {
+        "word": "隔鄰",
+        "translation": "旁邊",
+        "example_sentence": "我隔鄰嗰個人全身汗又漆埋嚟"
+    },
+    {
+        "word": "懵陣",
+        "translation": "暴躁",
+        "example_sentence": "呢排心情真係好嘛嘛，一啲就會好懵陣。"
+    },
+    {
+        "word": "卒之",
+        "translation": "終於",
+        "example_sentence": "卒之到咗香港，好攰"
+    },
+    {
+        "word": "折墮",
+        "translation": "墮落 落魄 悲慘 自暴自棄",
+        "example_sentence": "我哋竟然折墮成咁"
+    },
+    {
+        "word": "躝街",
+        "translation": "不喜歡在家，逛街",
+        "example_sentence": "佢成日躝街, 成個禮拜無返嚟食飯"
+    },
+    {
+        "word": "掛住",
+        "translation": "想/念",
+        "example_sentence": "你有冇掛住我"
+    },
+    {
+        "word": "七仔",
+        "translation": "7-11",
+        "example_sentence": "香港嘅7仔同台灣好唔一樣"
+    },
+    {
+        "word": "姑娘",
+        "translation": "護士",
+        "example_sentence": "醫院嘅姑娘每日照顧好多病人"
+    },
+    {
+        "word": "風筒",
+        "translation": "吹風機",
+        "example_sentence": "風筒你放喺邊啊？"
+    },
+    {
+        "word": "湊仔",
+        "translation": "帶小孩",
+        "example_sentence": "我仲未結婚就要幫家姐湊仔"
+    },
+    {
+        "word": "銀包",
+        "translation": "錢包",
+        "example_sentence": "唔記得攞銀包"
+    },
+    {
+        "word": "嘈喧巴閉",
+        "translation": "吵吵鬧鬧",
+        "example_sentence": "淨係要你幫手買嘢就嘈喧巴閉"
+    },
+    {
+        "word": "貼地",
+        "translation": "行為想法與大眾相同",
+        "example_sentence": "雖然佢係明星但諗法都幾貼地"
+    },
+    {
+        "word": "唔怪得知",
+        "translation": "難怪",
+        "example_sentence": "唔怪得知我哋節目唔係好成功。"
+    },
+    {
+        "word": "電燈膽",
+        "translation": "電燈泡",
+        "example_sentence": "我唔想做你哋嘅電燈膽"
+    },
+    {
+        "word": "不得止",
+        "translation": "不僅...而且..",
+        "example_sentence": "佢唔嚟不得止 仲叫人唔好嚟添"
+    },
+    {
+        "word": "見工",
+        "translation": "面試",
+        "example_sentence": "聽日我要見工"
+    },
+    {
+        "word": "抽水",
+        "translation": "吃豆腐, 非禮",
+        "example_sentence": "冇拉拉有人話我抽同事水"
+    },
+    {
+        "word": "補水",
+        "translation": "加薪水",
+        "example_sentence": "我都唔希望會補水但OT成咁我真係頂唔順"
+    },
+    {
+        "word": "唔對路",
+        "translation": "怪怪的",
+        "example_sentence": "係依度咩？我覺得有啲唔對路"
+    },
+    {
+        "word": "死貓",
+        "translation": "黑鍋",
+        "example_sentence": "食死貓"
+    },
+    {
+        "word": "匿埋",
+        "translation": "藏",
+        "example_sentence": "頭先睇到曱甴而家唔知佢匿埋喺邊"
+    },
+    {
+        "word": "疾住晒",
+        "translation": "頂嘴",
+        "example_sentence": "洗唔洗句句疾住晒"
+    },
+    {
+        "word": "黑人憎",
+        "translation": "讓人生氣",
+        "example_sentence": "佢做嘅嘢都好黑人憎"
+    },
+    {
+        "word": "打冷震",
+        "translation": "很冷,起雞皮疙瘩",
+        "example_sentence": "睇到佢著成咁真係驚到打冷震"
+    },
+    {
+        "word": "散水餅",
+        "translation": "離職餅",
+        "example_sentence": "我覺得比散水餅係對個同事好唔公平"
+    },
+    {
+        "word": "第時",
+        "translation": "未來的那個時候",
+        "example_sentence": "第時唔開心記得要話我知"
+    },
+    {
+        "word": "dead air",
+        "translation": "尷尬沒話講",
+        "example_sentence": "點化解嗰幾分鐘嘅Dead Air"
+    },
+    {
+        "word": "拿拿聲",
+        "translation": "快點",
+        "example_sentence": "你拿拿聲搞定佢啦"
+    }
+]

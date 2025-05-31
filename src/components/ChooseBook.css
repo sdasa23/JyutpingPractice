@@ -1,0 +1,26 @@
+.book-selector {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.book-selector h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.book-selector select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.book-selector select:focus {
+  outline: none;
+  border-color: #4a90e2;
+}

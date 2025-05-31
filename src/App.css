@@ -1,0 +1,72 @@
+/* SwitchPage.css */
+
+/* 整体布局 */
+.switch-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* 按钮组样式 - 固定在右上角 */
+.button-group {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px; /* 按钮间距 */
+  z-index: 100; /* 确保按钮在最上层 */
+}
+
+/* 按钮基础样式 */
+.switch-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+/* 按钮悬停效果 */
+.switch-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* 当前选中按钮的样式 */
+.switch-button.active {
+  background-color: #1890ff;
+  color: white;
+}
+
+/* 内容容器 - 居中显示 */
+.component-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* 确保足够高度 */
+  margin-top: 60px; /* 给按钮留出空间 */
+  padding: 20px;
+  width: 100%;
+}
+
+/* 响应式设计 - 小屏幕调整 */
+@media (max-width: 768px) {
+  .button-group {
+    top: 10px;
+    right: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  
+  .switch-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .component-container {
+    margin-top: 80px; /* 手机端需要更多顶部空间 */
+  }
+}

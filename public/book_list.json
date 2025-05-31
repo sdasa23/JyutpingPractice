@@ -1,0 +1,12 @@
+[
+  {
+    "name": "粤语特殊字",
+    "path": "/books/cantonese_words.json",
+    "words": 93
+  },
+  {
+    "name": "粤语特殊词",
+    "path": "/books/cantonese_phrases.json",
+    "words": 80
+  }
+]
