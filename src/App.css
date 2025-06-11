@@ -1,7 +1,5 @@
-/* SwitchPage.css */
 
-/* 整体布局 */
-.switch-page-container {
+.App-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;

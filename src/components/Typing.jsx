@@ -1,58 +1,56 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import './Typing.css';
 import { getJyutpingText } from "to-jyutping";
-
-// Import sound files (you'll need to provide these files in your public folder)
+import JyutpingAudioPlayer from './JyutpingAudioPlayer';
+// pre load audio files
 const typingSound = new Audio('/sounds/type.wav');
 const correctSound = new Audio('/sounds/correct.wav');
 const wrongSound = new Audio('/sounds/wrong.wav');
 
-// Preload sounds
 [typingSound, correctSound, wrongSound].forEach(sound => {
   sound.preload = 'auto';
 });
 
-const Typing = ({ dataUrl }) => {
-  // State management
-  const [vocabulary, setVocabulary] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+// Typing component
+const Typing = ({ 
+  vocabulary,
+  onIndexChange,
+  round = 1,
+  updateRound
+}) => {
+
+  // 状态管理
+  // const [vocabulary, setVocabulary] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  const [isCorrect, setIsCorrect] = useState(null);
   const [showHint, setShowHint] = useState(true);
   const [hasError, setHasError] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [errorMessage, setErrorMessage] = useState('');
   const [isMuted, setIsMuted] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
 
-  // Play sound helper function
+  // update the showHint state based on the round
+  // state must be a boolean
+  const showHintDependOnRound = ((state) => {
+    if (round === 1) {
+      setShowHint(state);
+    }else if (round === 2) {
+      setShowHint(state);
+    }else if (round === 3) {
+      setShowHint(false);
+    }else {
+      setShowHint(false);
+    }
+  })
+
+  // play sound function
   const playSound = useCallback((sound) => {
-    if (isMuted) return;
-    sound.currentTime = 0; // Rewind to start
-    sound.play().catch(e => console.log("Audio play failed:", e));
+    if (isMuted || !sound) return;
+    sound.currentTime = 0;
+    sound.play()
+         .catch(e => console.error("Audio play failed:", e));
   }, [isMuted]);
-
-  // Fetch vocabulary data
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setIsLoading(true);
-        const response = await fetch(dataUrl);
-        if (!response.ok) throw new Error('Network response was not ok');
-        const data = await response.json();
-        setVocabulary(data);
-        setErrorMessage('');
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setErrorMessage('数据加载失败，请稍后重试');
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [dataUrl]);
-
-  // Memoized current item with jyutping
+  
+  // current word item
   const currentItem = useMemo(() => {
     if (!vocabulary.length || !vocabulary[currentIndex]) return {};
     const item = { ...vocabulary[currentIndex] };
@@ -60,45 +58,38 @@ const Typing = ({ dataUrl }) => {
     return item;
   }, [vocabulary, currentIndex]);
 
-  // Navigation functions
-  const goToNext = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % vocabulary.length);
-    resetInputState();
-  }, [vocabulary.length]);
-
-  const goToPrev = useCallback(() => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? vocabulary.length - 1 : prevIndex - 1
-    );
-    resetInputState();
-  }, [vocabulary.length]);
-
+  // reset input state
   const resetInputState = useCallback(() => {
     setInputValue('');
-    setIsCorrect(null);
     setHasError(false);
   }, []);
 
-  // Answer checking logic
-  const checkAnswer = useCallback(() => {
-    if (!currentItem.jyutping) return;
-    
-    const expected = currentItem.jyutping.replace(/\s/g, '').toLowerCase();
-    const typed = inputValue.toLowerCase();
-    
-    if (typed === expected) {
-      setIsCorrect(true);
-      playSound(correctSound);
-      setTimeout(goToNext, 800);
-    } else {
-      setIsCorrect(false);
-      setHasError(true);
-      playSound(wrongSound);
-      setTimeout(resetInputState, 800);
-    }
-  }, [inputValue, currentItem.jyutping, goToNext, resetInputState, playSound]);
+  // negative functions
+  const goToNext = useCallback(() => {
+    setCurrentIndex(currentIndex + 1);    
+    resetInputState();
+  }, [currentIndex, vocabulary.length, resetInputState]);
 
-  // Real-time input validation
+  const goToPrev = useCallback(() => {
+    const newIndex = currentIndex === 0 ? 0 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+    resetInputState();
+  }, [currentIndex, vocabulary.length, resetInputState]);
+
+  // In round 1, user can see the hint
+  // In round 2, user needs to type the jyutping without hint, but he can see the hint if he press shortcut and listen the audio.
+  // In round 3, user shoulds type the jyutping without hint, and he cannot see the hint, but can listen the audio.
+  useEffect(() => {
+    if (round === 1) {
+      showHintDependOnRound(true);
+    } else if (round === 2) {
+      showHintDependOnRound(false);
+    } else if (round === 3) {
+      showHintDependOnRound(false);
+    }
+  }, [round]);
+
+  // check input value
   useEffect(() => {
     if (!inputValue.length || !currentItem.jyutping || hasError) return;
     
@@ -110,32 +101,45 @@ const Typing = ({ dataUrl }) => {
       playSound(wrongSound);
       setTimeout(resetInputState, 800);
     }
-  }, [inputValue, currentItem.jyutping, hasError, resetInputState]);
+  }, [inputValue, currentItem.jyutping, hasError, resetInputState, playSound]);
 
-  // Check if input length matches Jyutping length (excluding spaces)
+  // check answer correctness
   useEffect(() => {
-    if (!currentItem.jyutping) return;
+    if (!currentItem.jyutping || !inputValue) return;
     
-    const expectedLength = currentItem.jyutping.replace(/\s/g, '').length;
-    if (inputValue.length === expectedLength) {
-      checkAnswer();
+    const expected = currentItem.jyutping.replace(/\s/g, '').toLowerCase();
+    const typed = inputValue.toLowerCase();
+    
+    if (inputValue.length === expected.length) {
+      const isCorrectAnswer = typed === expected;
+      
+      if (isCorrectAnswer) {
+        playSound(correctSound);
+        setTimeout(() => {
+          setCurrentIndex(currentIndex + 1);
+          resetInputState();
+        }, 800);
+      } else {
+        setHasError(true);
+        playSound(wrongSound);
+        setTimeout(resetInputState, 800);
+      }
     }
-  }, [inputValue, currentItem.jyutping, checkAnswer]);
+  }, [inputValue, currentItem, currentIndex, vocabulary.length, resetInputState, playSound]);
 
-  // Keyboard event handling
+  // handle keyboard input
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Enter') {
-        checkAnswer();
-      } else if (e.key === ' ' && e.ctrlKey) {
+      if (e.key === ' ' && e.ctrlKey) {
         goToNext();
-      } else if (e.key === 'h' && e.ctrlKey) {
-        setShowHint(prev => !prev);
+      } else if (e.key === 'q' && e.ctrlKey ) { 
+        showHintDependOnRound(true);
+      } else if (e.key === 'p' && e.ctrlKey) { 
+        setIsPlayingAudio(true);
       } else if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
         if (hasError) return;
         setInputValue(prev => {
           const newValue = prev + e.key.toLowerCase();
-          // Play typing sound only when actually adding a character
           if (newValue.length > prev.length) {
             playSound(typingSound);
           }
@@ -144,17 +148,44 @@ const Typing = ({ dataUrl }) => {
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [checkAnswer, goToNext, hasError, playSound]);
+    const handleKeyUp = (e) => {
+      if (e.key === 'q' && e.ctrlKey) {
+        showHintDependOnRound(false);
+      }
+    }
 
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      window.removeEventListener('keyup', handleKeyUp);
+    };
+  }, [goToNext, hasError, playSound]);
+
+  // update round and reset index when reaching the end of vocabulary
+  useEffect(() => {
+    if (currentIndex === vocabulary.length) {
+      if (round === 1) {
+        updateRound(2);
+        setCurrentIndex(0);
+      }else if (round === 2) {
+        updateRound(3);
+        setCurrentIndex(0);
+      }else if (round === 3) {
+        updateRound(0);
+        
+        setCurrentIndex(0);
+      }
+    }
+  }, [currentIndex, vocabulary])
+
+  // get the index of typed characters
   const getTypedIndex = useCallback((originalIndex) => {
     if (!currentItem.jyutping) return null;
     
     let typedIndex = 0;
     let originalPos = 0;
     
-    // 遍历直到找到对应的原始位置
     while (originalPos < originalIndex && typedIndex < inputValue.length) {
       if (currentItem.jyutping[originalPos] !== ' ') {
         typedIndex++;
@@ -162,7 +193,6 @@ const Typing = ({ dataUrl }) => {
       originalPos++;
     }
     
-    // 如果当前位置是空格或者已经超出输入长度，返回null
     if (currentItem.jyutping[originalIndex] === ' ' || typedIndex >= inputValue.length) {
       return null;
     }
@@ -170,6 +200,7 @@ const Typing = ({ dataUrl }) => {
     return typedIndex;
   }, [currentItem.jyutping, inputValue]);
 
+  // 渲染高亮提示
   const getHighlightedHint = useCallback(() => {
     if (!currentItem.jyutping) return null;
 
@@ -183,7 +214,7 @@ const Typing = ({ dataUrl }) => {
             inputValue[typedIndex]?.toLowerCase() === char.toLowerCase();
 
           return isSpace ? (
-            <div key={index} className="letter-slot space"> 
+            <div key={`${index}-space`} className="letter-slot space"> 
               <span className="space-char">␣</span>
             </div>
           ) : (
@@ -193,12 +224,12 @@ const Typing = ({ dataUrl }) => {
             >
               <span className={
                 isCorrectChar 
-                  ? 'correct'
+                  ? 'typed-letter'
                   : hasError
-                    ? 'error-part' 
+                    ? 'error-letter' 
                     : isTyped
-                      ? 'typed-part' 
-                      : 'untyped-part'
+                      ? 'typed-letter'
+                      : 'untyped-letter'
               }>
                 {char}
               </span>
@@ -209,7 +240,7 @@ const Typing = ({ dataUrl }) => {
     );
   }, [currentItem.jyutping, inputValue, hasError, getTypedIndex]);
 
-
+  // 渲染输入框
   const renderLetterSlots = useCallback(() => {
     if (!currentItem.jyutping) return null;
     
@@ -223,7 +254,7 @@ const Typing = ({ dataUrl }) => {
             inputValue[typedIndex]?.toLowerCase() === char.toLowerCase();
 
           return isSpace ? (
-            <div key={index} className="letter-slot space">
+            <div key={`${index}-space`} className="letter-slot space">
               <span className="space-char">␣</span>
             </div>
           ) : (
@@ -239,36 +270,75 @@ const Typing = ({ dataUrl }) => {
     );
   }, [currentItem.jyutping, inputValue, hasError, getTypedIndex]);
 
-  // Loading and error states
-  if (isLoading) return <div className="status-message">加载中...</div>;
-  if (errorMessage) return <div className="status-message error">{errorMessage}</div>;
-  if (vocabulary.length === 0) return <div className="status-message">没有可用的词汇数据</div>;
-  if (!currentItem.word) return <div className="status-message">当前词汇数据异常</div>;
+  if (vocabulary.length === 0) return (
+    <div className="status-message">
+      没有可用的词汇数据
+    </div>
+  );
+  
+  if (!currentItem.word) return (
+    <div className="status-message">
+      当前词汇数据异常
+    </div>
+  );
 
   return (
     <div className="cantonese-practice">
       <h1>粤语拼音练习</h1>
       <div className="progress">
-        进度: {currentIndex + 1}/{vocabulary.length}
+        进度: {currentIndex + 1}/{vocabulary.length}  ||  Round: {round}
       </div>
       
       <div className="character-container">
-        <div className="character">{currentItem.word}</div>
         {showHint ? (
-          <div className={`hint ${isCorrect ? 'correct' : ''}`}>
-            {getHighlightedHint()}
-          </div>
+          getHighlightedHint()
         ) : (
           renderLetterSlots()
         )}
+        <div className="character">
+          {currentItem.word}
+          <JyutpingAudioPlayer 
+            jyutping={currentItem.jyutping}
+            isMuted={isMuted}
+            onPlayingChange={setIsPlayingAudio}
+          />
+        </div>
+        
+        {/* 显示翻译 */}
+        {currentItem.translation && (
+          <div className="translation">
+            <strong>翻译: </strong>{currentItem.translation}
+          </div>
+        )}
+        
+        {/* 显示例句 */}
+        {currentItem.example_sentence && (
+          <div className="example-sentence">
+            <strong>例句: </strong>{currentItem.example_sentence}
+          </div>
+        )}
+        
       </div>
       
       <div className="controls">
-        <button onClick={() => setShowHint(!showHint)}>
-          {showHint ? '隐藏提示' : '显示提示'} (h)
+        <button 
+          onClick={() => showHintDependOnRound(!showHint)}
+          className={`hint-button ${showHint ? 'active' : ''}`}
+        >
+          {showHint ? '隐藏粤拼' : '显示粤拼'}
         </button>
-        <button onClick={goToPrev}>上一个</button>
-        <button onClick={goToNext}>下一个 (空格)</button>
+        <button onClick={goToPrev} className="nav-button">
+          上一个
+        </button>
+        <button onClick={goToNext} className="nav-button">
+          下一个 (Ctrl+空格)
+        </button>
+        <button 
+          onClick={() => setIsMuted(!isMuted)}
+          className={`sound-button ${isMuted ? 'muted' : ''}`}
+        >
+          {isMuted ? '开启音效' : '关闭音效'}
+        </button>
       </div>
     </div>
   );

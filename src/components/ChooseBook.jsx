@@ -25,11 +25,10 @@ function ChooseBook({ onBookSelect }) {
       });
   }, []);
 
-  const handleSelect = (e) => {
-    const selectedPath = e.target.value;
-    setSelectedBook(selectedPath);
+  const handleSelect = (bookPath) => {
+    setSelectedBook(bookPath);
     if (onBookSelect) {
-      onBookSelect(selectedPath);
+      onBookSelect(bookPath);
     }
   };
 
@@ -40,14 +39,18 @@ function ChooseBook({ onBookSelect }) {
   return (
     <div className="book-selector">
       <h2>选择单词书</h2>
-      <select value={selectedBook} onChange={handleSelect}>
-        <option value="">-- 请选择单词书 --</option>
+      <div className="book-buttons-container">
         {books.map((book) => (
-          <option key={book.path} value={book.path}>
-            {book.name} ({book.words}词)
-          </option>
+          <button
+            key={book.path}
+            className={`book-button ${selectedBook === book.path ? "selected" : ""}`}
+            onClick={() => handleSelect(book.path)}
+          >
+            <span className="book-name">{book.name}</span>
+            <span className="word-count">({book.words}词)</span>
+          </button>
         ))}
-      </select>
+      </div>
     </div>
   );
 }

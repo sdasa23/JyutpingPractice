@@ -1,0 +1,172 @@
+/* SummaryPractice.css */
+
+.cantonese-practice {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  text-align: center;
+}
+
+.cantonese-practice h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.info {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.progress {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.character-rows-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 10px; /* 为滚动条留出空间 */
+}
+
+.character-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  min-width: min-content; /* 确保行不会收缩到小于内容宽度 */
+}
+
+.character-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 40px;
+  flex-shrink: 0; /* 防止字符单元缩小 */
+}
+
+.character-unit.active {
+  background-color: #f0f8ff;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.jyutping-hint {
+  margin-bottom: 8px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.character-box {
+  font-size: 2rem;
+  width: 40px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  flex-shrink: 0;
+}
+
+/* Jyutping highlighting styles */
+.space-char {
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.untyped-part {
+  color: #999;
+  font-size: 1rem;
+}
+
+.typed-part {
+  color: #333;
+  font-size: 1rem;
+}
+
+.correct-part {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.error-part {
+  color: #dc3545;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Controls */
+.controls {
+  margin-top: 30px;
+}
+
+.nav-button, .retry-button {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-button:hover, .retry-button:hover {
+  background-color: #0056b3;
+}
+
+/* Status messages */
+.status-message {
+  font-size: 1.5rem;
+  padding: 40px;
+  text-align: center;
+}
+
+.status-message.loading {
+  color: #17a2b8;
+}
+
+.status-message.error {
+  color: #dc3545;
+}
+
+.retry-button {
+  display: block;
+  margin: 20px auto 0;
+  background-color: #dc3545;
+}
+
+.retry-button:hover {
+  background-color: #bd2130;
+}
+
+/* 自定义滚动条样式 */
+.character-rows-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.character-rows-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.character-rows-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.character-rows-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

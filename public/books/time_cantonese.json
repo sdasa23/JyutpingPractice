@@ -1,0 +1,72 @@
+[
+    {
+        "word": "朝早",
+        "translation": "早上",
+        "example_sentence": ""
+    },
+    {
+        "word": "上晝",
+        "translation": "上午",
+        "example_sentence": ""
+    },
+    {
+        "word": "晏晝",
+        "translation": "中午",
+        "example_sentence": ""
+    },
+    {
+        "word": "下晝",
+        "translation": "下午",
+        "example_sentence": ""
+    },
+    {
+        "word": "夜晚",
+        "translation": "晚上",
+        "example_sentence": ""
+    },
+    {
+        "word": "今日",
+        "translation": "今天",
+        "example_sentence": ""
+    },
+    {
+        "word": "琴日",
+        "translation": "昨天",
+        "example_sentence": ""
+    },
+    {
+        "word": "聽日",
+        "translation": "明天",
+        "example_sentence": ""
+    },
+    {
+        "word": "前日",
+        "translation": "前天",
+        "example_sentence": ""
+    },
+    {
+        "word": "後日",
+        "translation": "後天",
+        "example_sentence": ""
+    },
+    {
+        "word": "邊日",
+        "translation": "哪天？",
+        "example_sentence": ""
+    },
+    {
+        "word": "幾時",
+        "translation": "什麼時候？",
+        "example_sentence": ""
+    },
+    {
+        "word": "今年",
+        "translation": "今年",
+        "example_sentence": ""
+    },
+    {
+        "word": "舊年",
+        "translation": "去年",
+        "example_sentence": ""
+    }
+]

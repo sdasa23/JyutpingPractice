@@ -8,5 +8,30 @@
     "name": "粤语特殊词",
     "path": "/books/cantonese_phrases.json",
     "words": 80
+  },
+  {
+    "name": "親的用法",
+    "path": "/books/chan_cantonese.json",
+    "words": 10
+  },
+  {
+    "name": "粤语食物",
+    "path": "/books/food_cantonese.json",
+    "words": 78
+  },
+  {
+    "name": "粤语水果",
+    "path": "/books/fruit_cantonese.json",
+    "words": 12
+  },
+  {
+    "name": "粤语买卖",
+    "path": "/books/purchase_cantonese.json",
+    "words": 8
+  },
+  {
+    "name": "粤语时间",
+    "path": "/books/time_cantonese.json",
+    "words": 14
   }
 ]

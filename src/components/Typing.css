@@ -4,196 +4,75 @@
   padding: 20px;
   text-align: center;
   font-family: Arial, sans-serif;
-}
-
-.progress, .score {
-  margin: 10px 0;
-  font-size: 1.1em;
-}
-
-.character-container {
-  margin: 30px 0;
-}
-
-.character {
-  font-size: 72px;
-  margin: 20px 0;
-}
-
-.hint {
-  font-size: 24px;
-  color: #999;
-  transition: color 0.3s;
-}
-
-.hint.correct {
-  color: #000;
-}
-
-.hint.incorrect {
-  color: #f00;
-}
-
-.input-container {
-  margin: 20px 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.input-container input {
-  padding: 10px;
-  font-size: 18px;
-  margin-right: 10px;
-  width: 200px;
-  border: 2px solid #ddd;
-  border-radius: 4px;
-}
-
-.input-container input.incorrect-input {
-  border-color: #f00;
-}
-
-.input-container button, .controls button {
-  padding: 10px 15px;
-  font-size: 16px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.input-container button:hover, .controls button:hover {
-  background-color: #45a049;
-}
-
-.controls {
-  margin-top: 20px;
-}
-
-.controls button {
-  margin: 0 10px;
-  background-color: #2196F3;
-}
-
-.controls button:hover {
-  background-color: #0b7dda;
-}
-
-.hint .typed-part {
-  color: black;
-  font-weight: bold;
-}
-
-.hint .untyped-part {
-  color: gray;
-}
-
-.hint .error-part {
-  color: red;
-}
-
-.hint.correct {
-  color: green;
-  font-weight: bold;
-}
-
-.correct {
-  color: green;
-}
-
-
-.instructions {
-  margin-top: 20px;
+/* Progress indicator */
+.progress {
+  margin: 0;
+  font-size: 1em;
   color: #666;
-  font-size: 0.9em;
 }
 
-/* Typing.css */
-.word-info {
-  margin-bottom: 20px;
-  text-align: center;
+/* Character word being practiced */
+.character-container {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
-.word {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.translation {
-  color: #666;
-  font-style: italic;
-}
-
-.example {
-  margin-top: 10px;
-  color: #888;
-}
-
-.underlines {
-  font-family: monospace;
-  letter-spacing: 0.5em;
-  margin-bottom: 10px;
-}
-
-.underline-char {
-  position: relative;
-  margin-right: -0.5em; /* 抵消letter-spacing的影响 */
-}
-
-.underline-char::after {
-  content: "_";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-}
-
-.hint {
-  font-family: monospace;
-  margin-bottom: 10px;
-}
-
-.typed-part {
-  color: #4CAF50;
-}
-
-.untyped-part {
-  color: #999;
-}
-
-.error-part {
-  color: #F44336;
-}
-
+/* Jyutping */
 .letter-slots {
   display: flex;
   gap: 0.3rem;
-  margin: 1rem 0;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  font-size: 2rem; /* 新增：增大字体大小 */
 }
 
 .letter-slot {
   position: relative;
-  min-width: 1.2rem;
+  min-width: 1.5rem; /* 调整宽度以适应更大的字体 */
   text-align: center;
 }
 
-.letter-slot.space {
-  min-width: 0.8rem;
-}
-
-.space-char {
-  color: #aaa;
-  font-size: 0.8em;
-}
-
+/* dufferent input status in hint*/
 .typed-letter {
   position: absolute;
   top: -1.2rem;
   left: 50%;
   transform: translateX(-50%);
   color: #4CAF50;
+}
+
+.untyped-letter {
+  position: absolute;
+  top: -1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #999;
+}
+
+.error-letter {
+  position: absolute;
+  top: -1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #F44336;
+}
+
+/* After closed the hint */
+.letter-slot.space {
+  min-width: 1.5rem; /* 调整宽度以适应更大的字体 */
+}
+
+.space-char {
+  color: #aaa;
 }
 
 .underline {
@@ -204,15 +83,94 @@
   color: #F44336;
 }
 
-.hint {
-  font-family: monospace;
-  margin: 1rem 0;
+.character {
+  font-size: 3rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.typed-part {
-  color: #4CAF50;
+/* Translation and example */
+.translation {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 10px;
 }
 
-.untyped-part {
-  color: #999;
+.example-sentence {
+  font-size: 1rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Controls at bottom */
+.controls {
+  order: 5;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.controls button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.controls button:hover {
+  background-color: #0b7dda;
+}
+
+.nav-button {
+  min-width: 100px;
+}
+
+/* Status messages */
+.status-message {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #2196F3;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  color: #F44336;
+}
+
+.retry-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }

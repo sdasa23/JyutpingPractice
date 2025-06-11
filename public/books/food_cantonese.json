@@ -1,0 +1,392 @@
+[
+    {
+        "word": "豬扒",
+        "translation": "豬排",
+        "example_sentence": ""
+    },
+    {
+        "word": "豬手",
+        "translation": "豬腳",
+        "example_sentence": ""
+    },
+    {
+        "word": "免治豬肉",
+        "translation": "豬絞肉",
+        "example_sentence": ""
+    },
+    {
+        "word": "煙肉",
+        "translation": "培根",
+        "example_sentence": ""
+    },
+    {
+        "word": "雞脾/雞肶/雞髀",
+        "translation": "雞腿",
+        "example_sentence": ""
+    },
+    {
+        "word": "雞翼",
+        "translation": "雞翅",
+        "example_sentence": ""
+    },
+    {
+        "word": "鳳爪",
+        "translation": "雞腳",
+        "example_sentence": ""
+    },
+    {
+        "word": "雪雞",
+        "translation": "冷凍雞",
+        "example_sentence": ""
+    },
+    {
+        "word": "咕嚕肉/咕咾肉",
+        "translation": "糖醋肉",
+        "example_sentence": ""
+    },
+    {
+        "word": "俐",
+        "translation": "舌頭",
+        "example_sentence": ""
+    },
+    {
+        "word": "生劏",
+        "translation": "現殺的",
+        "example_sentence": ""
+    },
+    {
+        "word": "海斑",
+        "translation": "石斑",
+        "example_sentence": ""
+    },
+    {
+        "word": "三文魚",
+        "translation": "鮭魚",
+        "example_sentence": ""
+    },
+    {
+        "word": "吞拿",
+        "translation": "鮪魚",
+        "example_sentence": ""
+    },
+    {
+        "word": "瑤柱",
+        "translation": "干貝絲",
+        "example_sentence": ""
+    },
+    {
+        "word": "虎蝦",
+        "translation": "明蝦",
+        "example_sentence": ""
+    },
+    {
+        "word": "馬交魚",
+        "translation": "土魠魚",
+        "example_sentence": ""
+    },
+    {
+        "word": "非洲鯽",
+        "translation": "吳郭魚",
+        "example_sentence": ""
+    },
+    {
+        "word": "魚蓉",
+        "translation": "魚肉泥",
+        "example_sentence": ""
+    },
+    {
+        "word": "魚生",
+        "translation": "生魚片",
+        "example_sentence": ""
+    },
+    {
+        "word": "雞泡魚",
+        "translation": "河豚",
+        "example_sentence": ""
+    },
+    {
+        "word": "八爪魚",
+        "translation": "章魚",
+        "example_sentence": ""
+    },
+    {
+        "word": "椰菜",
+        "translation": "高麗菜",
+        "example_sentence": ""
+    },
+    {
+        "word": "椰菜花",
+        "translation": "白花椰菜",
+        "example_sentence": ""
+    },
+    {
+        "word": "西蘭花",
+        "translation": "綠花椰菜",
+        "example_sentence": ""
+    },
+    {
+        "word": "西生菜",
+        "translation": "萵苣",
+        "example_sentence": ""
+    },
+    {
+        "word": "青豆",
+        "translation": "四季豆",
+        "example_sentence": ""
+    },
+    {
+        "word": "荷蘭豆",
+        "translation": "豌豆",
+        "example_sentence": ""
+    },
+    {
+        "word": "羊角豆",
+        "translation": "秋葵",
+        "example_sentence": ""
+    },
+    {
+        "word": "薯仔",
+        "translation": "馬鈴薯",
+        "example_sentence": ""
+    },
+    {
+        "word": "鮑魚菇",
+        "translation": "杏包菇",
+        "example_sentence": ""
+    },
+    {
+        "word": "沙律",
+        "translation": "沙拉",
+        "example_sentence": ""
+    },
+    {
+        "word": "粟米",
+        "translation": "玉米",
+        "example_sentence": ""
+    },
+    {
+        "word": "通菜",
+        "translation": "空心菜",
+        "example_sentence": ""
+    },
+    {
+        "word": "冬菇",
+        "translation": "",
+        "example_sentence": ""
+    },
+    {
+        "word": "青瓜",
+        "translation": "小黃瓜",
+        "example_sentence": ""
+    },
+    {
+        "word": "油菜",
+        "translation": "油水燙過青菜＋醬油",
+        "example_sentence": ""
+    },
+    {
+        "word": "豆腐花",
+        "translation": "豆花",
+        "example_sentence": ""
+    },
+    {
+        "word": "雪糕",
+        "translation": "冰淇淋",
+        "example_sentence": ""
+    },
+    {
+        "word": "雲尼拿",
+        "translation": "香草",
+        "example_sentence": ""
+    },
+    {
+        "word": "忌廉",
+        "translation": "奶油",
+        "example_sentence": ""
+    },
+    {
+        "word": "班戟",
+        "translation": "可麗餅",
+        "example_sentence": ""
+    },
+    {
+        "word": "啫哩",
+        "translation": "果凍",
+        "example_sentence": ""
+    },
+    {
+        "word": "格仔餅",
+        "translation": "格狀鬆餅",
+        "example_sentence": ""
+    },
+    {
+        "word": "朱古力",
+        "translation": "巧克力",
+        "example_sentence": ""
+    },
+    {
+        "word": "布甸",
+        "translation": "布丁",
+        "example_sentence": ""
+    },
+    {
+        "word": "批",
+        "translation": "派",
+        "example_sentence": ""
+    },
+    {
+        "word": "碟頭飯",
+        "translation": "一個盤子的餐飯(像是台灣的燴飯)",
+        "example_sentence": ""
+    },
+    {
+        "word": "法蘭西多士",
+        "translation": "油炸吐司 ＋ 奶油 ＋花生醬",
+        "example_sentence": ""
+    },
+    {
+        "word": "三文治",
+        "translation": "三明治",
+        "example_sentence": ""
+    },
+    {
+        "word": "菠蘿包",
+        "translation": "菠蘿麵包 + 奶油",
+        "example_sentence": ""
+    },
+    {
+        "word": "多士",
+        "translation": "吐司",
+        "example_sentence": ""
+    },
+    {
+        "word": "奄列",
+        "translation": "美式蛋捲",
+        "example_sentence": ""
+    },
+    {
+        "word": "麥記/M記",
+        "translation": "麥當勞",
+        "example_sentence": ""
+    },
+    {
+        "word": "焗",
+        "translation": "烤",
+        "example_sentence": ""
+    },
+    {
+        "word": "雲吞",
+        "translation": "餛飩",
+        "example_sentence": ""
+    },
+    {
+        "word": "炸兩",
+        "translation": "腸粉包油炸鬼",
+        "example_sentence": ""
+    },
+    {
+        "word": "西冷牛扒",
+        "translation": "沙朗牛排",
+        "example_sentence": ""
+    },
+    {
+        "word": "吉列/cutlet",
+        "translation": "炸過得食物",
+        "example_sentence": ""
+    },
+    {
+        "word": "豬仔包",
+        "translation": "麵包塗奶油＋煉乳",
+        "example_sentence": ""
+    },
+    {
+        "word": "方包",
+        "translation": "未烤過的吐司",
+        "example_sentence": ""
+    },
+    {
+        "word": "冰火菠蘿油",
+        "translation": "熱菠蘿麵包＋鹹奶油",
+        "example_sentence": ""
+    },
+    {
+        "word": "上海麵",
+        "translation": "陽春麵",
+        "example_sentence": ""
+    },
+    {
+        "word": "淨麵",
+        "translation": "陽春麵/清湯麵",
+        "example_sentence": ""
+    },
+    {
+        "word": "通粉",
+        "translation": "通心麵",
+        "example_sentence": ""
+    },
+    {
+        "word": "意粉",
+        "translation": "義大利麵",
+        "example_sentence": ""
+    },
+    {
+        "word": "烏冬",
+        "translation": "烏龍麵",
+        "example_sentence": ""
+    },
+    {
+        "word": "粉絲",
+        "translation": "冬粉",
+        "example_sentence": ""
+    },
+    {
+        "word": "公仔麵",
+        "translation": "泡麵",
+        "example_sentence": ""
+    },
+    {
+        "word": "牛油",
+        "translation": "奶油",
+        "example_sentence": ""
+    },
+    {
+        "word": "果占",
+        "translation": "果醬",
+        "example_sentence": ""
+    },
+    {
+        "word": "沙律油",
+        "translation": "沙拉油",
+        "example_sentence": ""
+    },
+    {
+        "word": "奶醬",
+        "translation": "花生醬＋煉乳",
+        "example_sentence": ""
+    },
+    {
+        "word": "鴛鴦",
+        "translation": "奶茶＋咖啡",
+        "example_sentence": ""
+    },
+    {
+        "word": "黑白鴛鴦",
+        "translation": "好立客＋阿華田",
+        "example_sentence": ""
+    },
+    {
+        "word": "樽",
+        "translation": "瓶",
+        "example_sentence": ""
+    },
+    {
+        "word": "凍檸茶",
+        "translation": "冷的檸檬茶",
+        "example_sentence": ""
+    },
+    {
+        "word": "熱檸水",
+        "translation": "熱檸檬水",
+        "example_sentence": ""
+    }
+]
