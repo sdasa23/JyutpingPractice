@@ -30,9 +30,10 @@
   display: flex;
   gap: 0.3rem;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* 禁止换行 */
   margin: 1rem 0;
-  font-size: 2rem; /* 新增：增大字体大小 */
+  font-size: 2rem;
+
 }
 
 .letter-slot {
@@ -107,11 +108,11 @@
 /* Controls at bottom */
 .controls {
   order: 5;
-  margin-top: 20px;
+  margin-top: 25px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-wrap: nowrap; /* forbide to another line */
+  gap: 12px;
 }
 
 .controls button {

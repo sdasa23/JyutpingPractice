@@ -25,11 +25,6 @@
     "words": 12
   },
   {
-    "name": "粤语买卖",
-    "path": "/books/purchase_cantonese.json",
-    "words": 8
-  },
-  {
     "name": "粤语时间",
     "path": "/books/time_cantonese.json",
     "words": 14

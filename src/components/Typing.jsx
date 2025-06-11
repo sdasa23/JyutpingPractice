@@ -14,13 +14,11 @@ const wrongSound = new Audio('/sounds/wrong.wav');
 // Typing component
 const Typing = ({ 
   vocabulary,
-  onIndexChange,
+  onAnswer,
   round = 1,
   updateRound
 }) => {
-
-  // 状态管理
-  // const [vocabulary, setVocabulary] = useState([]);
+  // state variables
   const [inputValue, setInputValue] = useState('');
   const [showHint, setShowHint] = useState(true);
   const [hasError, setHasError] = useState(false);
@@ -100,6 +98,7 @@ const Typing = ({
       setHasError(true);
       playSound(wrongSound);
       setTimeout(resetInputState, 800);
+      onAnswer(currentItem.word, false);
     }
   }, [inputValue, currentItem.jyutping, hasError, resetInputState, playSound]);
 
@@ -115,6 +114,7 @@ const Typing = ({
       
       if (isCorrectAnswer) {
         playSound(correctSound);
+        onAnswer(currentItem.word, true);
         setTimeout(() => {
           setCurrentIndex(currentIndex + 1);
           resetInputState();
@@ -122,6 +122,7 @@ const Typing = ({
       } else {
         setHasError(true);
         playSound(wrongSound);
+        onAnswer(currentItem.word, false);
         setTimeout(resetInputState, 800);
       }
     }
@@ -164,7 +165,8 @@ const Typing = ({
 
   // update round and reset index when reaching the end of vocabulary
   useEffect(() => {
-    if (currentIndex === vocabulary.length) {
+    // add vocabulary.length > 0, to avoid currentIndex = vocabulary.length = 0
+    if (currentIndex === vocabulary.length && vocabulary.length > 0) {
       if (round === 1) {
         updateRound(2);
         setCurrentIndex(0);
@@ -173,7 +175,7 @@ const Typing = ({
         setCurrentIndex(0);
       }else if (round === 3) {
         updateRound(0);
-        
+
         setCurrentIndex(0);
       }
     }
@@ -200,7 +202,7 @@ const Typing = ({
     return typedIndex;
   }, [currentItem.jyutping, inputValue]);
 
-  // 渲染高亮提示
+  // render highlighted jyutping hint
   const getHighlightedHint = useCallback(() => {
     if (!currentItem.jyutping) return null;
 
@@ -240,7 +242,7 @@ const Typing = ({
     );
   }, [currentItem.jyutping, inputValue, hasError, getTypedIndex]);
 
-  // 渲染输入框
+  // render input slots
   const renderLetterSlots = useCallback(() => {
     if (!currentItem.jyutping) return null;
     
@@ -325,7 +327,7 @@ const Typing = ({
           onClick={() => showHintDependOnRound(!showHint)}
           className={`hint-button ${showHint ? 'active' : ''}`}
         >
-          {showHint ? '隐藏粤拼' : '显示粤拼'}
+          {showHint ? '隐藏粤拼' : '显示粤拼'} (ctrl+q)
         </button>
         <button onClick={goToPrev} className="nav-button">
           上一个

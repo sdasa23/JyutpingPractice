@@ -4,7 +4,6 @@ import "./App.css"
 import ChooseBook from "./components/ChooseBook.jsx";
 import StudyRecord from "./components/StudyRecord.jsx";
 import Toolbar from "./components/Toolbar.jsx";
-import SummaryPractice from "./components/SummaryPractice.jsx";
 import ErrorDisplay from "./components/ErrorDisplay.jsx";
 
 function App(){
@@ -17,7 +16,8 @@ function App(){
     return saved ? JSON.parse(saved) : {
       currentComponent: 'Typing',
       selectedBookPath: '/books/cantonese_phrases.json',
-      selectedBookPathWithIndex: {'/books/cantonese_phrases.json': 0},
+      bookProgressIndex: {'/books/cantonese_phrases.json': 0},
+      bookPracticeTime: {'/books/cantonese_phrases.json': 0},
       };
   });
 
@@ -44,7 +44,7 @@ function App(){
         
         if (!isMounted) return;
 
-        const currentIndex = appState.selectedBookPathWithIndex?.[appState.selectedBookPath] ?? 0;
+        const currentIndex = appState.bookProgressIndex?.[appState.selectedBookPath] ?? 0;
         let nextBatch = [];
 
         if (round === 0) {
@@ -61,11 +61,12 @@ function App(){
 
         if (nextBatch.length > 0) {
           setTmpVocabulary([...nextBatch]);
-          setRound(prev => round === 0 ? 1 : prev);j
+          setRound(prev => round === 0 ? 1 : prev);
           setErrorMessage('');
         } else {
           setErrorMessage(round === 0 ? '已加载所有单词' : '已学习此单词本的所有单词');
         }
+
       } catch (error) {
         console.error('Error fetching data:', error);
         if (isMounted) setErrorMessage('数据加载失败，请稍后重试');
@@ -79,7 +80,7 @@ function App(){
     return () => {
       isMounted = false;
     };
-  }, [appState.selectedBookPath, round, appState.selectedBookPathWithIndex, currentBatch, batchSize]);
+  }, [appState.selectedBookPath, round, appState.bookProgressIndex, currentBatch, batchSize]);
 
   // use useEffect to save state to localStorage whenever it changes
   useEffect(() => {
@@ -91,25 +92,30 @@ function App(){
     setAppState(prev => ({
       ...prev,
       ...newState,
-      selectedBookPathWithIndex: {
-        ...prev.selectedBookPathWithIndex,
-        ...(newState.selectedBookPathWithIndex || {})
+      bookProgressIndex: {
+        ...prev.bookProgressIndex,
+        ...(newState.bookProgressIndex || {})
       }
     }));
   };
 
   // handle book selection
   const handleBookSelect = (path) => {
-    setTmpVocabulary([]); // 清空当前词汇
-    setCurrentBatch(0);   // 重置批次
-    setRound(1);          // 重置轮次
+    setTmpVocabulary([]); 
+    setCurrentBatch(0);   
+    setRound(1);
+    setErrorMessage(''); // reset error message when a new book is selected         
     updateState({
       selectedBookPath: path,
-      selectedBookPathWithIndex: {
+      bookProgressIndex: {
         // keep the original record
-        ...appState.selectedBookPathWithIndex,
+        ...appState.bookProgressIndex,
         // if the path was used, use the recording index. If not, use 0.
-        [path]: appState.selectedBookPathWithIndex[path] || 0
+        [path]: appState.bookProgressIndex[path] || 0
+      },
+      bookPracticeTime: {
+        ...appState.bookPracticeTime,
+        [path]: appState.bookPracticeTime[path] || 0
       },
       currentComponent: 'Typing'
     });
@@ -118,16 +124,28 @@ function App(){
   const updateIndex = useCallback((path, index) => {
     setAppState(prev => ({
       ...prev,
-      selectedBookPathWithIndex: {
-        ...prev.selectedBookPathWithIndex,
+      bookProgressIndex: {
+        ...prev.bookProgressIndex,
         [path]: index
       }
     }));
-  }, [batchSize]);
+  }, []);
+
+  const updatePracticeTime = useCallback((path) => {
+    setAppState(prev => ({
+      ...prev,
+      bookPracticeTime: {
+        ...prev.bookPracticeTime,
+        [path]: (prev.bookPracticeTime[path] || 0) + 1
+      }
+    }));
+  }, []);
+
 
   const resetVocabulary = useCallback(() => {
     console.log('Resetting vocabulary and index');
     updateIndex(appState.selectedBookPath, 0);
+    updatePracticeTime(appState.selectedBookPath);
     setTmpVocabulary([]);
     setCurrentBatch(0);
     setRound(1);
@@ -147,10 +165,10 @@ function App(){
           lastPracticed: now,
           correctCount: (prevRecords[word]?.correctCount || 0) + (isCorrect ? 1 : 0),
           wrongCount: (prevRecords[word]?.wrongCount || 0) + (isCorrect ? 0 : 1),
-          history: [
-            ...(prevRecords[word]?.history || []),
-            { timestamp: now, isCorrect }
-          ]
+          // history: [
+          //   ...(prevRecords[word]?.history || []),
+          //   { timestamp: now, isCorrect }
+          // ]
         }
       };
       
@@ -169,7 +187,7 @@ function App(){
     />
   ), [
     appState.selectedBookPath, 
-    appState.selectedBookPathWithIndex, 
+    appState.bookProgressIndex, 
     updateLearningRecord,
     updateIndex,
     round
@@ -188,22 +206,16 @@ function App(){
   // render the component based on the current state
   const renderComponent = useCallback(() => {
     switch (appState.currentComponent) {
-      case 'A': return <ChooseBook onBookSelect={handleBookSelect} />;
+      case 'A': return <ChooseBook onBookSelect={handleBookSelect} appRecord={appState}/>;
       case 'B': return <StudyRecord records={learningRecords} />;
       case 'C': return <Toolbar />;
-      case 'Error': return <ErrorDisplay error={errorMessage} onRetry={resetVocabulary}/>;
-      case 'Summary': return (
-        <SummaryPractice 
-          practicedWords={tmpVocabulary}
-          onComplete={() => updateState({ currentComponent: 'Typing' })}
-        />
-      );
+      case 'Error': return <ErrorDisplay error={errorMessage} onRetry={resetVocabulary} onUpdateState={updateState}/>;
       default: return typingComponent;
     }
   }, [appState.currentComponent, learningRecords, tmpVocabulary, handleBookSelect, typingComponent]);
   
 
-    // 加载和错误状态
+    // loading state
   if (isLoading) return (
     <div className="status-message loading">
       <div className="spinner"></div>
