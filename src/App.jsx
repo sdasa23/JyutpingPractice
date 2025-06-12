@@ -15,9 +15,9 @@ function App(){
   const saved = localStorage.getItem('cantoneseAppState');
     return saved ? JSON.parse(saved) : {
       currentComponent: 'Typing',
-      selectedBookPath: '/books/cantonese_phrases.json',
-      bookProgressIndex: {'/books/cantonese_phrases.json': 0},
-      bookPracticeTime: {'/books/cantonese_phrases.json': 0},
+      selectedBookPath: '/JyutpingPractice/books/cantonese_phrases.json',
+      bookProgressIndex: {'/JyutpingPractice/books/cantonese_phrases.json': 0},
+      bookPracticeTime: {'/JyutpingPractice/books/cantonese_phrases.json': 0},
       };
   });
 
