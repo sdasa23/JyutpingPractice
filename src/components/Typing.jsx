@@ -3,9 +3,9 @@ import './Typing.css';
 import { getJyutpingText } from "to-jyutping";
 import JyutpingAudioPlayer from './JyutpingAudioPlayer';
 // pre load audio files
-const typingSound = new Audio('/sounds/type.wav');
-const correctSound = new Audio('/sounds/correct.wav');
-const wrongSound = new Audio('/sounds/wrong.wav');
+const typingSound = new Audio('/JyutpingPractice/sounds/type.wav');
+const correctSound = new Audio('/JyutpingPractice/sounds/correct.wav');
+const wrongSound = new Audio('/JyutpingPractice/sounds/wrong.wav');
 
 [typingSound, correctSound, wrongSound].forEach(sound => {
   sound.preload = 'auto';
