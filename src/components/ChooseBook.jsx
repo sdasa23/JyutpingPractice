@@ -8,7 +8,7 @@ function ChooseBook({ onBookSelect, appRecord }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("./book_list.json") 
+    fetch("./JyutpingPractice/book_list.json") 
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch book list");
