@@ -1,0 +1,467 @@
+[
+    {
+        "word": "嘅",
+        "translation": "的",
+        "example_sentence": "我嘅工作喺台北"
+    },
+    {
+        "word": "哋",
+        "translation": "們",
+        "example_sentence": "我哋今日一齊去食飯"
+    },
+    {
+        "word": "啲",
+        "translation": "一點",
+        "example_sentence": "我覺得咁會好啲"
+    },
+    {
+        "word": "嗰",
+        "translation": "那",
+        "example_sentence": "我中意嗰個手袋"
+    },
+    {
+        "word": "依 / 呢",
+        "translation": "這",
+        "example_sentence": "依間茶樓嘅嘢好好食"
+    },
+    {
+        "word": "唞",
+        "translation": "休息",
+        "example_sentence": "等陣我 我想唞吓先"
+    },
+    {
+        "word": "靚",
+        "translation": "漂亮",
+        "example_sentence": "嗰個花好靚"
+    },
+    {
+        "word": "佢",
+        "translation": "他",
+        "example_sentence": "佢喺百貨公司行街"
+    },
+    {
+        "word": "度",
+        "translation": "那邊/裡",
+        "example_sentence": "你要去邊度"
+    },
+    {
+        "word": "仲",
+        "translation": "還",
+        "example_sentence": "我仲要一杯凍檸水"
+    },
+    {
+        "word": "乜",
+        "translation": "什麼",
+        "example_sentence": "你做緊乜阿"
+    },
+    {
+        "word": "嘢",
+        "translation": "東西",
+        "example_sentence": "我屋企嘅嘢太多"
+    },
+    {
+        "word": "緊",
+        "translation": "正在 ing / 重",
+        "example_sentence": "好多人喺排緊隊"
+    },
+    {
+        "word": "細",
+        "translation": "小",
+        "example_sentence": "細一啲嘅車 比較好"
+    },
+    {
+        "word": "冇",
+        "translation": "沒有/沒",
+        "example_sentence": "琴日嗰間店冇開"
+    },
+    {
+        "word": "唔",
+        "translation": "不",
+        "example_sentence": "你宜家肚唔肚餓"
+    },
+    {
+        "word": "點",
+        "translation": "如何",
+        "example_sentence": "你覺得依個手袋點樣？"
+    },
+    {
+        "word": "咗",
+        "translation": "已經 / 了 有英文 ed的意思",
+        "example_sentence": "我到咗公司"
+    },
+    {
+        "word": "得",
+        "translation": "行",
+        "example_sentence": ""
+    },
+    {
+        "word": "揾",
+        "translation": "找",
+        "example_sentence": "揾唔到我嘅嘢"
+    },
+    {
+        "word": "使",
+        "translation": "用",
+        "example_sentence": "我今日買咗一個嘢 好好使"
+    },
+    {
+        "word": "陣",
+        "translation": "一下",
+        "example_sentence": "你喺依度等陣"
+    },
+    {
+        "word": "咁",
+        "translation": "這麼/那麼",
+        "example_sentence": "叫咁多食唔曬"
+    },
+    {
+        "word": "係",
+        "translation": "是",
+        "example_sentence": "依間店係賣生果嘅"
+    },
+    {
+        "word": "俾",
+        "translation": "給",
+        "example_sentence": "佢都冇打電話俾我"
+    },
+    {
+        "word": "第",
+        "translation": "別 / 其他",
+        "example_sentence": "呢件衫有冇第D色？"
+    },
+    {
+        "word": "睇",
+        "translation": "看",
+        "example_sentence": "睇戲前要買飛"
+    },
+    {
+        "word": "喺",
+        "translation": "在",
+        "example_sentence": "我屋企喺台北"
+    },
+    {
+        "word": "啱",
+        "translation": "剛 ／ 對／適合",
+        "example_sentence": "我啱啱有睇到你"
+    },
+    {
+        "word": "琴",
+        "translation": "昨",
+        "example_sentence": "我琴日唔使返工"
+    },
+    {
+        "word": "波",
+        "translation": "球",
+        "example_sentence": "聽日一齊去打波"
+    },
+    {
+        "word": "蝕",
+        "translation": "賠",
+        "example_sentence": "已經蝕咗本賣啦"
+    },
+    {
+        "word": "舖",
+        "translation": "店",
+        "example_sentence": "依間舖嘅嘢比較平"
+    },
+    {
+        "word": "番(返)",
+        "translation": "回",
+        "example_sentence": "唔該幫我教番啲(D) 時間"
+    },
+    {
+        "word": "揾",
+        "translation": "找",
+        "example_sentence": "你要揾啲乜嘢阿？"
+    },
+    {
+        "word": "晒",
+        "translation": "完",
+        "example_sentence": "太遲去， 都賣晒咗"
+    },
+    {
+        "word": "諗",
+        "translation": "想",
+        "example_sentence": "我諗住 聽日要去運動"
+    },
+    {
+        "word": "話",
+        "translation": "說",
+        "example_sentence": "你想點樣再話我知"
+    },
+    {
+        "word": "抵",
+        "translation": "下/便宜",
+        "example_sentence": "你留抵電話 我哋聽日會打俾你"
+    },
+    {
+        "word": "攞",
+        "translation": "拿",
+        "example_sentence": "啲(D)相幾時攞得？"
+    },
+    {
+        "word": "平",
+        "translation": "便宜",
+        "example_sentence": ""
+    },
+    {
+        "word": "o徙",
+        "translation": "浪費",
+        "example_sentence": "食得唔好o徙"
+    },
+    {
+        "word": "估",
+        "translation": "猜",
+        "example_sentence": "我估計依次旅行會用10000蚊"
+    },
+    {
+        "word": "飛",
+        "translation": "票",
+        "example_sentence": "佢喺買緊飛"
+    },
+    {
+        "word": "計",
+        "translation": "算",
+        "example_sentence": ""
+    },
+    {
+        "word": "定",
+        "translation": "還是/或",
+        "example_sentence": "你要熱定凍嘅茶？"
+    },
+    {
+        "word": "瞓",
+        "translation": "睡",
+        "example_sentence": "你幾時要瞓"
+    },
+    {
+        "word": "遮",
+        "translation": "傘",
+        "example_sentence": "今日下午會落雨，記得帶遮"
+    },
+    {
+        "word": "梗",
+        "translation": "當然",
+        "example_sentence": "嚟香港梗係要去山頂"
+    },
+    {
+        "word": "拎",
+        "translation": "拿",
+        "example_sentence": "拎左邊第二個俾我睇吓"
+    },
+    {
+        "word": "揀",
+        "translation": "選",
+        "example_sentence": "大平賣嘅時都好多人來依間舖揀嘢"
+    },
+    {
+        "word": "傾",
+        "translation": "聊",
+        "example_sentence": "難得可以傾下"
+    },
+    {
+        "word": "堂",
+        "translation": "課",
+        "example_sentence": "同學都好想快D落堂"
+    },
+    {
+        "word": "屙",
+        "translation": "痛",
+        "example_sentence": "我琴日返工時好肚屙"
+    },
+    {
+        "word": "攰",
+        "translation": "累",
+        "example_sentence": "今日返工好攰"
+    },
+    {
+        "word": "錫",
+        "translation": "疼",
+        "example_sentence": "還係老公最錫我"
+    },
+    {
+        "word": "慳",
+        "translation": "省",
+        "example_sentence": "幫你慳電四成"
+    },
+    {
+        "word": "咸",
+        "translation": "哭",
+        "example_sentence": "媽媽講我細個時好常咸"
+    },
+    {
+        "word": "邊",
+        "translation": "哪",
+        "example_sentence": "你要去邊阿？"
+    },
+    {
+        "word": "掂",
+        "translation": "行/靠得住/好",
+        "example_sentence": "佢做嘢好掂"
+    },
+    {
+        "word": "迫",
+        "translation": "擠",
+        "example_sentence": "每日迫車，迫巴士 好辛苦。"
+    },
+    {
+        "word": "讚",
+        "translation": "稱讚",
+        "example_sentence": "多謝你咁樣讚我"
+    },
+    {
+        "word": "筍",
+        "translation": "好的, 便宜的",
+        "example_sentence": "邊度有筍盤買？"
+    },
+    {
+        "word": "激",
+        "translation": "氣",
+        "example_sentence": "我真係被你激死"
+    },
+    {
+        "word": "夾",
+        "translation": "合適",
+        "example_sentence": "兩個人喺一齊一定要夾先會長久"
+    },
+    {
+        "word": "嘆",
+        "translation": "享受",
+        "example_sentence": "好食嘅嘢要慢慢嘆"
+    },
+    {
+        "word": "遲",
+        "translation": "晚(指未來的晚)",
+        "example_sentence": "佢同我講唔想太遲結婚"
+    },
+    {
+        "word": "企",
+        "translation": "站",
+        "example_sentence": "咁多人企喺度"
+    },
+    {
+        "word": "跣",
+        "translation": "滑",
+        "example_sentence": "落雨渣車會跣胎"
+    },
+    {
+        "word": "排",
+        "translation": "一段時間",
+        "example_sentence": "住一排就會慣㗎啦"
+    },
+    {
+        "word": "開",
+        "translation": "習慣",
+        "example_sentence": "你用開支洗頭水"
+    },
+    {
+        "word": "整",
+        "translation": "自己做",
+        "example_sentence": "依個我自己整o既"
+    },
+    {
+        "word": "添",
+        "translation": "亦, 都",
+        "example_sentence": "你晏晝遲到添"
+    },
+    {
+        "word": "抌",
+        "translation": "丟",
+        "example_sentence": "依件衫我好鍾意，唔好抌啦！"
+    },
+    {
+        "word": "執",
+        "translation": "整理",
+        "example_sentence": ""
+    },
+    {
+        "word": "嗌",
+        "translation": "吵架",
+        "example_sentence": "嗌交"
+    },
+    {
+        "word": "氹",
+        "translation": "哄,逗",
+        "example_sentence": "氹人開心"
+    },
+    {
+        "word": "啖",
+        "translation": "口",
+        "example_sentence": "食一啖先"
+    },
+    {
+        "word": "索",
+        "translation": "性感",
+        "example_sentence": "酒吧裡嘅女仔都著得好索 我都唔知睇邊度"
+    },
+    {
+        "word": "黑",
+        "translation": "衰",
+        "example_sentence": "我最近好黑"
+    },
+    {
+        "word": "串",
+        "translation": "囂張",
+        "example_sentence": "你講嘢咁串唔驚俾人打咩？"
+    },
+    {
+        "word": "漆",
+        "translation": "黏",
+        "example_sentence": "點阿你，全身汗又漆埋嚟"
+    },
+    {
+        "word": "樽",
+        "translation": "瓶",
+        "example_sentence": "俾一樽啤酒我，唔該。"
+    },
+    {
+        "word": "派",
+        "translation": "發",
+        "example_sentence": "有人喺地鐵附近派免費小食"
+    },
+    {
+        "word": "雜",
+        "translation": "弱",
+        "example_sentence": "你唔好怪別人啦！自己雜啫"
+    },
+    {
+        "word": "套",
+        "translation": "部",
+        "example_sentence": "你最鍾意邊套動畫？"
+    },
+    {
+        "word": "差",
+        "translation": "非常/超級",
+        "example_sentence": "好差攰"
+    },
+    {
+        "word": "浸",
+        "translation": "泡",
+        "example_sentence": "最近天氣好凍，想去浸溫泉"
+    },
+    {
+        "word": "車",
+        "translation": "載",
+        "example_sentence": "一陣有咩做，車埋你返屋企喇"
+    },
+    {
+        "word": "掣",
+        "translation": "兇",
+        "example_sentence": "對細路唔好太惡，會有反效果添"
+    },
+    {
+        "word": "惡",
+        "translation": "show",
+        "example_sentence": "下月周董要嚟香港開騷"
+    },
+    {
+        "word": "騷",
+        "translation": "打",
+        "example_sentence": "你炳佢都冇用，最緊要係佢知自己唔啱"
+    },
+    {
+        "word": "置",
+        "translation": "不要",
+        "example_sentence": "咪走"
+    }
+]
